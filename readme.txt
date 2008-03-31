@@ -3,9 +3,9 @@ Contributors: coffee2code
 Donate link: http://coffee2code.com
 Tags: permalink, structure, link, category
 Requires at least: 1.5
-Tested up to: 2.3.2
+Tested up to: 2.5
 Stable tag: trunk
-Version: 0.9.5
+Version: 1.0
 
 Modify the `%category%` permalink structure tag to generate a category-based permalink structure that only displays the lowest category in a hierarchy, as opposed to the entire hierarchy of categories.
 

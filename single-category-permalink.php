@@ -1,24 +1,21 @@
 <?php
 /*
 Plugin Name: Single Category Permalink
-Version: 0.9.5
-Plugin URI: http://www.coffee2code.com/wp-plugins/
+Version: 1.0
+Plugin URI: http://coffee2code.com/wp-plugins/single-category-permalink
 Author: Scott Reilly
-Author URI: http://www.coffee2code.com
+Author URI: http://coffee2code.com
 Description: Modify the %category% permalink structure tag to generate a category-based permalink structure that only displays the lowest category in a hierarchy, as opposed to the entire hierarchy of categories.
 
-Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, and 2.3+.
+Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, 2.3+, and 2.5.
 
 =>> Read the accompanying readme.txt file for more information.  Also, visit the plugin's homepage
 =>> for more information and the latest updates
 
 Installation:
 
-1. Download the file http://www.coffee2code.com/wp-plugins/single-category-permalink.zip and unzip it into your 
+1. Download the file http://coffee2code.com/wp-plugins/single-category-permalink.zip and unzip it into your 
 /wp-content/plugins/ directory.
--OR-
-Copy and paste the the code ( http://www.coffee2code.com/wp-plugins/single-category-permalink.phps ) into a file called 
-single-category-permalink.php, and put that file into your /wp-content/plugins/ directory.
 2. Activate the plugin through the 'Plugins' admin menu in WordPress
 3. Use %category% as a permalink tag in the 'Options' -> 'Permalinks' admin options page when defining a custom permalink structure
 
