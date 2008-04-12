@@ -7,6 +7,32 @@ Author: Scott Reilly
 Author URI: http://coffee2code.com
 Description: Modify the %category% permalink structure tag to generate a category-based permalink structure that only displays the lowest category in a hierarchy, as opposed to the entire hierarchy of categories.
 
+By default, WordPress replaces the %category% permalink tag in a custom permalink structure with the entire 
+hierarchy of categories for the post's first matching category.  For example, assuming your site has a 
+hierarchical category structure like so:
+
+	Applications
+	  |_ Desktop
+	  |_ Web
+	    |_ Wordpress
+
+By default, if you have a permalink structure defined as "%category%/%year%/%monthnum%/%day%/%postname%",
+your post titled "Best Plugins" assigned to the "WordPress" category would have a permalink of:
+
+http://www.yourblog.com/applications/web/wordpress/2008/01/15/best-plugins
+
+If you activate the Single Category Permalink plugin, this would be the permalink generated for the post
+(and recognized by the blog):
+
+http://www.yourblog.com/wordpress/2008/01/15/best-plugins
+	
+In order for a category to be used as part of a post's permalink structure, %category% must be explicitly defined in
+the Options -> Permalinks (or in WP 2.5: Settings -> Permalinks) admin page as part of a custom structure, i.e.
+"/%category%/%postname%".
+
+For category links, %category% is implied to follow the value set as the "Category base" (or the default category base
+if none is specified).
+
 Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, 2.3+, and 2.5.
 
 =>> Read the accompanying readme.txt file for more information.  Also, visit the plugin's homepage
@@ -17,7 +43,8 @@ Installation:
 1. Download the file http://coffee2code.com/wp-plugins/single-category-permalink.zip and unzip it into your 
 /wp-content/plugins/ directory.
 2. Activate the plugin through the 'Plugins' admin menu in WordPress
-3. Use %category% as a permalink tag in the 'Options' -> 'Permalinks' admin options page when defining a custom permalink structure
+3. Use %category% as a permalink tag in the 'Options' -> 'Permalinks' (or in WP 2.5: 'Settings' -> 'Permalinks')
+admin options page when defining a custom permalink structure
 
 */
 
@@ -65,7 +92,7 @@ function single_category_catlink($catlink, $category_id) {
 			return $category;
 		$category_nicename = $category->slug;
 
-		$catlink = str_replace('/category/', '/', $catlink);
+		//$catlink = str_replace('/category/', '/', $catlink);
 		$catlink = str_replace('%category%', $category_nicename, $catlink);
 		$catlink = get_option('home') . user_trailingslashit($catlink, 'category');
 	}

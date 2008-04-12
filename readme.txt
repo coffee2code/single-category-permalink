@@ -27,6 +27,10 @@ http://www.yourblog.com/applications/web/wordpress/2008/01/15/best-plugins
 If you activate the Single Category Permalink plugin, this would be the permalink generated for the post (and recognized by the blog):
 http://www.yourblog.com/wordpress/2008/01/15/best-plugins
 
+In order for a category to be used as part of a post's permalink structure, %category% must be explicitly defined in the Options -> Permalinks (or in WP 2.5: Settings -> Permalinks) admin page as part of a custom structure, i.e. `/%category%/%postname%`.
+
+For category links, `%category%` is implied to follow the value set as the "Category base" (or the default category base if none is specified).
+
 == Installation ==
 
 1. Unzip `single-category-permalink.zip` inside the `/wp-content/plugins/` directory, or upload `single-category-permalink.php` into `/wp-content/plugins/`
