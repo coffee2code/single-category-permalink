@@ -3,9 +3,9 @@ Contributors: coffee2code
 Donate link: http://coffee2code.com/donate
 Tags: permalink, structure, link, category, coffee2code
 Requires at least: 1.5
-Tested up to: 3.2
-Stable tag: 2.0
-Version: 2.0
+Tested up to: 3.2.1
+Stable tag: 2.0.1
+Version: 2.0.1
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -93,6 +93,9 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
+= 2.0.1 =
+* Fix bug triggered when creating new post
+
 = 2.0 =
 * Fix compatibility bug relating to generation of category permalink
 * Rename single_category_postlink() to c2c_single_category_postlink()
@@ -117,6 +120,9 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 
 == Upgrade Notice ==
+
+= 2.0.1 =
+Bugfix release: fixed bug triggered when creating new post (especially recommended if using %category% in custom permalink structure)
 
 = 2.0 =
 Recommended update. No functional changes, but many changes to formatting and documentation; noted compatibility through WP 3.2.

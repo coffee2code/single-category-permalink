@@ -2,11 +2,11 @@
 /**
  * @package Single_Category_Permalink
  * @author Scott Reilly
- * @version 2.0
+ * @version 2.0.1
  */
 /*
 Plugin Name: Single Category Permalink
-Version: 2.0
+Version: 2.0.1
 Plugin URI: http://coffee2code.com/wp-plugins/single-category-permalink
 Author: Scott Reilly
 Author URI: http://coffee2code.com
@@ -17,6 +17,9 @@ Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, 2.3+, 2.5+, 2.6+, 2.7+, 2.8+, 
 =>> Read the accompanying readme.txt file for instructions and documentation.
 =>> Also, visit the plugin's homepage for additional information and updates.
 =>> Or visit: http://wordpress.org/extend/plugins/single-category-permalinks/
+
+TODO:
+	* Wrap functions in a class
 
 */
 
@@ -53,15 +56,19 @@ function c2c_single_category_postlink( $permalink, $post ) {
 
 	if ( strpos( $permalink_structure, '%category%' ) !== false ) {
 		$cats = get_the_category( $post->ID );
-		if ( $cats )
+		if ( $cats ) {
 			usort( $cats, '_usort_terms_by_ID' ); // order by ID
-		$category = $cats[0]->slug;
+			$category = $cats[0];
+		} else {
+			$category = get_category( intval( get_option( 'default_category') ) );
+		}
 
-		if ( $parent = $cats[0]->parent )
-			$category = get_category_parents( $parent, false, '/', true ) . $category;
+		$category_hierarchy = $category->slug;
+		if ( $parent = $category->parent )
+			$category_hierarchy = get_category_parents( $parent, false, '/', true ) . $category->slug;
 
 		// Now we know what the permalink component involving category hierarchy consists of.  Get rid of it.
-		$permalink = str_replace( $category, $cats[0]->slug, $permalink );
+		$permalink = str_replace( $category_hierarchy, $category->slug, $permalink );
 	}
 
 	return $permalink;
