@@ -2,17 +2,17 @@
 /**
  * @package Single_Category_Permalink
  * @author Scott Reilly
- * @version 2.0.1
+ * @version 2.0.2
  */
 /*
 Plugin Name: Single Category Permalink
-Version: 2.0.1
-Plugin URI: http://coffee2code.com/wp-plugins/single-category-permalink
+Version: 2.0.2
+Plugin URI: http://coffee2code.com/wp-plugins/single-category-permalink/
 Author: Scott Reilly
-Author URI: http://coffee2code.com
+Author URI: http://coffee2code.com/
 Description: Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
-Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, 2.3+, 2.5+, 2.6+, 2.7+, 2.8+, 2.9+, 3.0+, 3.1+, 3.2+.
+Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, 2.3+, 2.5+, 2.6+, 2.7+, 2.8+, 2.9+, 3.0+, 3.1+, 3.2+, 3.3+.
 
 =>> Read the accompanying readme.txt file for instructions and documentation.
 =>> Also, visit the plugin's homepage for additional information and updates.
@@ -24,7 +24,7 @@ TODO:
 */
 
 /*
-Copyright (c) 2007-2011 by Scott Reilly (aka coffee2code)
+Copyright (c) 2007-2012 by Scott Reilly (aka coffee2code)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
 files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, 

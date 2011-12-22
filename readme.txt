@@ -3,9 +3,9 @@ Contributors: coffee2code
 Donate link: http://coffee2code.com/donate
 Tags: permalink, structure, link, category, coffee2code
 Requires at least: 1.5
-Tested up to: 3.2.1
-Stable tag: 2.0.1
-Version: 2.0.1
+Tested up to: 3.3
+Stable tag: 2.0.2
+Version: 2.0.2
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -43,7 +43,7 @@ With this plugin activated, that link would become:
 
 NOTE: The fully hierarchical category and post permalinks will continue to work.  The plugin issues are 302 redirect to browsers and search engines pointing them to the shorter URL.
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/single-category-permalink/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/single-category-permalink/) | [Plugin Directory Page](http://wordpress.org/extend/plugins/single-category-permalink/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -93,6 +93,11 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
+= 2.0.2 =
+* Note compatibility through WP 3.3+
+* Add link to plugin directory page to readme.txt
+* Update copyright date (2012)
+
 = 2.0.1 =
 * Fix bug triggered when creating new post
 
@@ -120,6 +125,9 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 
 == Upgrade Notice ==
+
+= 2.0.2 =
+Trivial update: noted compatibility through WP 3.3+
 
 = 2.0.1 =
 Bugfix release: fixed bug triggered when creating new post (especially recommended if using %category% in custom permalink structure)
