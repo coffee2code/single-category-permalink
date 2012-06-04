@@ -2,10 +2,12 @@
 Contributors: coffee2code
 Donate link: http://coffee2code.com/donate
 Tags: permalink, structure, link, category, coffee2code
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
-Tested up to: 3.3
-Stable tag: 2.0.2
-Version: 2.0.2
+Tested up to: 3.4
+Stable tag: 2.0.3
+Version: 2.0.3
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -41,7 +43,7 @@ With this plugin activated, that link would become:
 
 `http://www.yourblog.com/category/wordpress/`
 
-NOTE: The fully hierarchical category and post permalinks will continue to work.  The plugin issues are 302 redirect to browsers and search engines pointing them to the shorter URL.
+NOTE: The fully hierarchical category and post permalinks will continue to work.  The plugin issues a 302 redirect to browsers and search engines pointing them to the shorter URL.
 
 Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/single-category-permalink/) | [Plugin Directory Page](http://wordpress.org/extend/plugins/single-category-permalink/) | [Author Homepage](http://coffee2code.com)
 
@@ -93,6 +95,12 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
+= 2.0.3 =
+* Re-license as GPLv2 or later (from X11)
+* Add 'License' and 'License URI' header tags to readme.txt and plugin file
+* Remove ending PHP close tag
+* Note compatibility through WP 3.4+
+
 = 2.0.2 =
 * Note compatibility through WP 3.3+
 * Add link to plugin directory page to readme.txt
@@ -125,6 +133,9 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 
 == Upgrade Notice ==
+
+= 2.0.3 =
+Trivial update: noted compatibility through WP 3.4+; explicitly stated license
 
 = 2.0.2 =
 Trivial update: noted compatibility through WP 3.3+
