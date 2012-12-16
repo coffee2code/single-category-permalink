@@ -2,11 +2,11 @@
 /**
  * @package Single_Category_Permalink
  * @author Scott Reilly
- * @version 2.0.3
+ * @version 2.0.4
  */
 /*
 Plugin Name: Single Category Permalink
-Version: 2.0.3
+Version: 2.0.4
 Plugin URI: http://coffee2code.com/wp-plugins/single-category-permalink/
 Author: Scott Reilly
 Author URI: http://coffee2code.com/
@@ -14,7 +14,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
-Compatible with WordPress 1.5 through 3.4+.
+Compatible with WordPress 1.5 through 3.5+.
 
 =>> Read the accompanying readme.txt file for instructions and documentation.
 =>> Also, visit the plugin's homepage for additional information and updates.
@@ -26,7 +26,7 @@ TODO:
 */
 
 /*
-	Copyright (c) 2007-2012 by Scott Reilly (aka coffee2code)
+	Copyright (c) 2007-2013 by Scott Reilly (aka coffee2code)
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -42,6 +42,8 @@ TODO:
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
+
+defined( 'ABSPATH' ) or die();
 
 if ( ! function_exists( 'c2c_single_category_postlink' ) ) :
 /**
@@ -92,6 +94,7 @@ if ( ! function_exists( 'c2c_single_category_catlink' ) ) :
  */
 function c2c_single_category_catlink( $catlink, $category_id ) {
 	global $wp_rewrite;
+
 	$catlink = $wp_rewrite->get_category_permastruct();
 
 	if ( empty( $catlink ) ) {
@@ -105,7 +108,7 @@ function c2c_single_category_catlink( $catlink, $category_id ) {
 
 		//$catlink = str_replace('/category/', '/', $catlink);
 		$catlink = str_replace( '%category%', $category_nicename, $catlink );
-		$catlink = get_option( 'siteurl' ) . '/' . user_trailingslashit( $catlink, 'category' );
+		$catlink = get_option( 'siteurl' ) . user_trailingslashit( $catlink, 'category' );
 	}
 
 	return $catlink;
@@ -122,6 +125,7 @@ if ( ! function_exists( 'c2c_single_category_redirect' ) ) :
  */
 function c2c_single_category_redirect() {
 	global $wp_query, $post;
+
 	$redirect = null;
 	$category_name = isset( $wp_query->query['category_name'] ) ? $wp_query->query['category_name'] : '';
 
@@ -139,6 +143,6 @@ function c2c_single_category_redirect() {
 }
 endif;
 
-add_filter( 'category_link',     'c2c_single_category_catlink', 10, 2 );
+add_filter( 'category_link',     'c2c_single_category_catlink',  10, 2 );
 add_filter( 'post_link',         'c2c_single_category_postlink', 10, 2 );
-add_filter( 'template_redirect', 'c2c_single_category_redirect' );
+add_filter( 'template_redirect', 'c2c_single_category_redirect'        );

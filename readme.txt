@@ -5,9 +5,9 @@ Tags: permalink, structure, link, category, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
-Tested up to: 3.4
-Stable tag: 2.0.3
-Version: 2.0.3
+Tested up to: 3.5
+Stable tag: 2.0.4
+Version: 2.0.4
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -35,7 +35,7 @@ If you activate the Single Category Permalink plugin, this would be the permalin
 
 In order for a category to be used as part of a post's permalink structure, %category% must be explicitly defined in the Settings -> Permalinks admin page as part of a custom structure, i.e. `/%category%/%postname%`.
 
-For category links, `%category%` is implied to follow the value set as the "Category base" (or the default category base if none is specified).  so if your category base is 'category', the above example would list posts in the 'WordPress' on this category listing page:
+For category links, `%category%` is implied to follow the value set as the "Category base" (or the default category base if none is specified).  so if your category base is 'category', the above example would list posts in the 'WordPress' category on this category listing page:
 
 `http://www.yourblog.com/category/applications/web/wordpress/`
 
@@ -95,6 +95,12 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
+= 2.0.4 =
+* Add check to prevent execution of code if file is directly accessed
+* Note compatibility through WP 3.5+
+* Update copyright date (2013)
+* Minor code reformatting (spacing)
+
 = 2.0.3 =
 * Re-license as GPLv2 or later (from X11)
 * Add 'License' and 'License URI' header tags to readme.txt and plugin file
@@ -133,6 +139,9 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 
 == Upgrade Notice ==
+
+= 2.0.4 =
+Trivial update: noted compatibility through WP 3.5+
 
 = 2.0.3 =
 Trivial update: noted compatibility through WP 3.4+; explicitly stated license
