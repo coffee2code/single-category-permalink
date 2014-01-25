@@ -2,11 +2,11 @@
 /**
  * @package Single_Category_Permalink
  * @author Scott Reilly
- * @version 2.0.4
+ * @version 2.1
  */
 /*
 Plugin Name: Single Category Permalink
-Version: 2.0.4
+Version: 2.1
 Plugin URI: http://coffee2code.com/wp-plugins/single-category-permalink/
 Author: Scott Reilly
 Author URI: http://coffee2code.com/
@@ -14,7 +14,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
-Compatible with WordPress 1.5 through 3.5+.
+Compatible with WordPress 1.5 through 3.8+.
 
 =>> Read the accompanying readme.txt file for instructions and documentation.
 =>> Also, visit the plugin's homepage for additional information and updates.
@@ -26,7 +26,7 @@ TODO:
 */
 
 /*
-	Copyright (c) 2007-2013 by Scott Reilly (aka coffee2code)
+	Copyright (c) 2007-2014 by Scott Reilly (aka coffee2code)
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -35,7 +35,7 @@ TODO:
 
 	This program is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 	GNU General Public License for more details.
 
 	You should have received a copy of the GNU General Public License
@@ -53,14 +53,18 @@ if ( ! function_exists( 'c2c_single_category_postlink' ) ) :
  * kicks into gear to reduce a hierarchical category structure to its lowest
  * category.
  *
- * @param string $permalink The default URI for the post
- * @param WP_Post $post The post
- * @return string The post URI
+ * @param  string  $permalink The default URI for the post
+ * @param  WP_Post $post The post
+ * @return string  The post URI
  */
 function c2c_single_category_postlink( $permalink, $post ) {
 	$permalink_structure = get_option( 'permalink_structure' );
 
+	// Only do anything if '%category%' is part of the post permalink
 	if ( strpos( $permalink_structure, '%category%' ) !== false ) {
+
+		// Find the canonical category for the post (assigned category with
+		// lowest id)
 		$cats = get_the_category( $post->ID );
 		if ( $cats ) {
 			usort( $cats, '_usort_terms_by_ID' ); // order by ID
@@ -69,11 +73,14 @@ function c2c_single_category_postlink( $permalink, $post ) {
 			$category = get_category( intval( get_option( 'default_category') ) );
 		}
 
+		// Find category hierachy for the category. By default, these would be
+		// part of the full category permalink.
 		$category_hierarchy = $category->slug;
-		if ( $parent = $category->parent )
+		if ( $parent = $category->parent ) {
 			$category_hierarchy = get_category_parents( $parent, false, '/', true ) . $category->slug;
+		}
 
-		// Now we know what the permalink component involving category hierarchy consists of.  Get rid of it.
+		// Now that the permalink component involving category hierarchy consists of is known, get rid of it.
 		$permalink = str_replace( $category_hierarchy, $category->slug, $permalink );
 	}
 
@@ -88,8 +95,8 @@ if ( ! function_exists( 'c2c_single_category_catlink' ) ) :
  * If the given category is hierarchical, then this function kicks into gear to
  * reduce a hierarchical category structure to its lowest category in the link.
  *
- * @param string $catlink The default URI for the category
- * @param int $category_id The category ID
+ * @param  string $catlink The default URI for the category
+ * @param  int    $category_id The category ID
  * @return string The category URI
  */
 function c2c_single_category_catlink( $catlink, $category_id ) {
@@ -98,17 +105,18 @@ function c2c_single_category_catlink( $catlink, $category_id ) {
 	$catlink = $wp_rewrite->get_category_permastruct();
 
 	if ( empty( $catlink ) ) {
-		$file = get_option( 'siteurl' ) . '/';
+		$file    = trailingslashit( get_option( 'siteurl' ) );
 		$catlink = $file . '?cat=' . $category_id;
 	} else {
 		$category = &get_category( $category_id );
-		if ( is_wp_error( $category ) )
+		if ( is_wp_error( $category ) ) {
 			return $category;
+		}
 		$category_nicename = $category->slug;
 
 		//$catlink = str_replace('/category/', '/', $catlink);
 		$catlink = str_replace( '%category%', $category_nicename, $catlink );
-		$catlink = get_option( 'siteurl' ) . user_trailingslashit( $catlink, 'category' );
+		$catlink = home_url( user_trailingslashit( $catlink, 'category' ) );
 	}
 
 	return $catlink;
@@ -126,20 +134,23 @@ if ( ! function_exists( 'c2c_single_category_redirect' ) ) :
 function c2c_single_category_redirect() {
 	global $wp_query, $post;
 
-	$redirect = null;
+	$redirect      = null;
 	$category_name = isset( $wp_query->query['category_name'] ) ? $wp_query->query['category_name'] : '';
 
 	if ( is_category() ) {
-		if ( ! empty( $category_name ) && $category_name != $wp_query->query_vars['category_name'] )
+		if ( ! empty( $category_name ) && $category_name != $wp_query->query_vars['category_name'] ) {
 			$redirect = c2c_single_category_catlink( '', $wp_query->query_vars['cat'] );
+		}
 	}
 	elseif ( is_single() ) {
-		if ( ! empty( $category_name ) && substr_count( $category_name, '/' ) > 1 )
+		if ( ! empty( $category_name ) && substr_count( $category_name, '/' ) > 1 ) {
 			$redirect = get_permalink( $post );
+		}
 	}
 
-	if ( $redirect )
+	if ( $redirect ) {
 		wp_redirect( $redirect, apply_filters( 'c2c_single_category_redirect_status', 302 ) );
+	}
 }
 endif;
 
