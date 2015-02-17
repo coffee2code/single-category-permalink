@@ -7,7 +7,10 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		parent::setUp();
 		$this->set_permalink();
 	}
-	/**
+
+
+
+	/*
 	 * HELPER FUNCTIONS
 	 */
 
@@ -23,9 +26,10 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 
 
 
-	/**
+	/*
 	 * TESTS
 	 */
+
 
 
 	/* Test post permalink */

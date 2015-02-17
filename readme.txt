@@ -5,8 +5,8 @@ Tags: permalink, structure, link, category, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
-Tested up to: 3.8.1
-Stable tag: 2.1
+Tested up to: 4.1
+Stable tag: 2.1.1
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -26,25 +26,25 @@ Applications
 
 By default, if you have a permalink structure defined as `%category%/%year%/%monthnum%/%day%/%postname%`, your post titled "Best Plugins" assigned to the "WordPress" category would have a permalink of:
 
-`http://www.yourblog.com/applications/web/wordpress/2008/01/15/best-plugins`
+`http://www.example.com/applications/web/wordpress/2008/01/15/best-plugins`
 
 If you activate the Single Category Permalink plugin, this would be the permalink generated for the post (and recognized by the blog):
 
-`http://www.yourblog.com/wordpress/2008/01/15/best-plugins`
+`http://www.example.com/wordpress/2008/01/15/best-plugins`
 
 In order for a category to be used as part of a post's permalink structure, %category% must be explicitly defined in the Settings -> Permalinks admin page as part of a custom structure, i.e. `/%category%/%postname%`.
 
 For category links, `%category%` is implied to follow the value set as the "Category base" (or the default category base if none is specified). So if your category base is 'category', the above example would list posts in the 'WordPress' category on this category listing page:
 
-`http://www.yourblog.com/category/applications/web/wordpress/`
+`http://www.example.com/category/applications/web/wordpress/`
 
 With this plugin activated, that link would become:
 
-`http://www.yourblog.com/category/wordpress/`
+`http://www.example.com/category/wordpress/`
 
 NOTE: The fully hierarchical category and post permalinks will continue to work. The plugin issues a 302 redirect to browsers and search engines pointing them to the shorter URL.
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/single-category-permalink/) | [Plugin Directory Page](http://wordpress.org/plugins/single-category-permalink/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/single-category-permalink/) | [Plugin Directory Page](https://wordpress.org/plugins/single-category-permalink/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -97,6 +97,13 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 
 == Changelog ==
+
+= 2.1.1 (2015-02-17) =
+* Reformat plugin header
+* Note compatibility through WP 4.1+
+* Change documentation links to wp.org to be https
+* Update copyright date (2015)
+* Add plugin icon
 
 = 2.1 (2014-01-24) =
 * Add unit tests
@@ -151,6 +158,9 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 
 == Upgrade Notice ==
+
+= 2.1.1 =
+Trivial update: noted compatibility through WP 4.1+; updated copyright date (2015); added plugin icon
 
 = 2.1 =
 Minor update: added unit tests; noted compatibility through WP 3.8+

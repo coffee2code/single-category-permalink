@@ -1,32 +1,32 @@
 <?php
 /**
+ * Plugin Name: Single Category Permalink
+ * Version:     2.1.1
+ * Plugin URI:  http://coffee2code.com/wp-plugins/single-category-permalink/
+ * Author:      Scott Reilly
+ * Author URI:  http://coffee2code.com/
+ * License:     GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Description: Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
+ *
+ * Compatible with WordPress 1.5 through 4.1+.
+ *
+ * =>> Read the accompanying readme.txt file for instructions and documentation.
+ * =>> Also, visit the plugin's homepage for additional information and updates.
+ * =>> Or visit: https://wordpress.org/plugins/single-category-permalinks/
+ *
  * @package Single_Category_Permalink
  * @author Scott Reilly
- * @version 2.1
+ * @version 2.1.1
  */
-/*
-Plugin Name: Single Category Permalink
-Version: 2.1
-Plugin URI: http://coffee2code.com/wp-plugins/single-category-permalink/
-Author: Scott Reilly
-Author URI: http://coffee2code.com/
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Description: Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
-
-Compatible with WordPress 1.5 through 3.8+.
-
-=>> Read the accompanying readme.txt file for instructions and documentation.
-=>> Also, visit the plugin's homepage for additional information and updates.
-=>> Or visit: http://wordpress.org/extend/plugins/single-category-permalinks/
-
-TODO:
-	* Wrap functions in a class
-
-*/
 
 /*
-	Copyright (c) 2007-2014 by Scott Reilly (aka coffee2code)
+ * TODO:
+ * - Wrap functions in a class
+ */
+
+/*
+	Copyright (c) 2007-2015 by Scott Reilly (aka coffee2code)
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -54,7 +54,7 @@ if ( ! function_exists( 'c2c_single_category_postlink' ) ) :
  * category.
  *
  * @param  string  $permalink The default URI for the post
- * @param  WP_Post $post The post
+ * @param  WP_Post $post      The post
  * @return string  The post URI
  */
 function c2c_single_category_postlink( $permalink, $post ) {
@@ -95,7 +95,7 @@ if ( ! function_exists( 'c2c_single_category_catlink' ) ) :
  * If the given category is hierarchical, then this function kicks into gear to
  * reduce a hierarchical category structure to its lowest category in the link.
  *
- * @param  string $catlink The default URI for the category
+ * @param  string $catlink     The default URI for the category
  * @param  int    $category_id The category ID
  * @return string The category URI
  */
