@@ -5,8 +5,8 @@ Tags: permalink, structure, link, category, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
-Tested up to: 4.1
-Stable tag: 2.1.1
+Tested up to: 4.5
+Stable tag: 2.1.2
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -89,6 +89,12 @@ Example:
 
 `
 // Change single category redirect to 301
+/**
+ * Change the redirection HTTP status to a 301.
+ *
+ * @param int $code The HTTP status code. By default 302.
+ * @return int
+ */
 function scp_change_redirect_status( $code ) {
 	return 301;
 }
@@ -97,6 +103,15 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 
 == Changelog ==
+
+= 2.1.2 (2016-03-29) =
+* New: Add LICENSE file.
+* New: Add empty index.php to prevent files from being listed if web server has enabled directory listings.
+* New: Add 'Text Domain' to plugin header.
+* Change: Minor code reformatting.
+* Change: Explicitly declare methods in unit tests as public; minor unit test doc reformatting.
+* Change: Note compatibility through WP 4.5+.
+* Change: Update copyright date (2016).
 
 = 2.1.1 (2015-02-17) =
 * Reformat plugin header
@@ -158,6 +173,9 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 
 == Upgrade Notice ==
+
+= 2.1.2 =
+Trivial update: verified compatibility through WP 4.5; updated copyright date (2016).
 
 = 2.1.1 =
 Trivial update: noted compatibility through WP 4.1+; updated copyright date (2015); added plugin icon

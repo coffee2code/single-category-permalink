@@ -1,19 +1,20 @@
 <?php
 
+defined( 'ABSPATH' ) or die();
+
 class Single_Category_Permalink_Test extends WP_UnitTestCase {
 
-
-	function setUp() {
+	public function setUp() {
 		parent::setUp();
 		$this->set_permalink();
 	}
 
 
-
-	/*
-	 * HELPER FUNCTIONS
-	 */
-
+	//
+	//
+	// HELPER FUNCTIONS
+	//
+	//
 
 
 	private function set_permalink( $structure = '/%category%/%postname%/', $category_structure = '/category/%category%/' ) {
@@ -25,16 +26,16 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 	}
 
 
-
-	/*
-	 * TESTS
-	 */
-
+	//
+	//
+	// TESTS
+	//
+	//
 
 
 	/* Test post permalink */
 
-	function test_non_hierarchical_category_not_affected() {
+	public function test_non_hierarchical_category_not_affected() {
 		$cat_id  = $this->factory->category->create( array ( 'slug' => 'aaa', 'name' => 'AAA' ) );
 		$post_id = $this->factory->post->create( array( 'post_title' => 'Cat Post' ) );
 		wp_set_post_categories( $post_id, $cat_id );
@@ -42,7 +43,7 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		$this->assertEquals( 'http://example.org/aaa/cat-post/', get_permalink( $post_id ) );
 	}
 
-	function test_post_assigned_hierarchical_leaf_category() {
+	public function test_post_assigned_hierarchical_leaf_category() {
 		$cat1_id = $this->factory->category->create( array ( 'slug' => 'aaa', 'name' => 'AAA' ) );
 		$cat2_id = $this->factory->category->create( array ( 'slug' => 'bbb', 'name' => 'BBB', 'parent' => $cat1_id ) );
 		$cat3_id = $this->factory->category->create( array ( 'slug' => 'ccc', 'name' => 'CCC', 'parent' => $cat2_id ) );
@@ -52,7 +53,7 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		$this->assertEquals( 'http://example.org/ccc/cat-post/', get_permalink( $post_id ) );
 	}
 
-	function test_post_assigned_hierarchical_root_category() {
+	public function test_post_assigned_hierarchical_root_category() {
 		$cat1_id = $this->factory->category->create( array ( 'slug' => 'aaa', 'name' => 'AAA' ) );
 		$cat2_id = $this->factory->category->create( array ( 'slug' => 'bbb', 'name' => 'BBB', 'parent' => $cat1_id ) );
 		$cat3_id = $this->factory->category->create( array ( 'slug' => 'ccc', 'name' => 'CCC', 'parent' => $cat2_id ) );
@@ -62,7 +63,7 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		$this->assertEquals( 'http://example.org/aaa/cat-post/', get_permalink( $post_id ) );
 	}
 
-	function test_post_assigned_hierarchical_midlevel_category() {
+	public function test_post_assigned_hierarchical_midlevel_category() {
 		$cat1_id = $this->factory->category->create( array ( 'slug' => 'aaa', 'name' => 'AAA' ) );
 		$cat2_id = $this->factory->category->create( array ( 'slug' => 'bbb', 'name' => 'BBB', 'parent' => $cat1_id ) );
 		$cat3_id = $this->factory->category->create( array ( 'slug' => 'ccc', 'name' => 'CCC', 'parent' => $cat2_id ) );
@@ -72,7 +73,7 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		$this->assertEquals( 'http://example.org/bbb/cat-post/', get_permalink( $post_id ) );
 	}
 
-	function test_post_assigned_multiple_hierarchical_leaf_categories() {
+	public function test_post_assigned_multiple_hierarchical_leaf_categories() {
 		$cat1_id = $this->factory->category->create( array ( 'slug' => 'aaa', 'name' => 'AAA' ) );
 		$cat2_id = $this->factory->category->create( array ( 'slug' => 'bbb', 'name' => 'BBB', 'parent' => $cat1_id ) );
 		$cat3_id = $this->factory->category->create( array ( 'slug' => 'ccc', 'name' => 'CCC', 'parent' => $cat2_id ) );
@@ -85,7 +86,7 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 
 	/* Test category permalink */
 
-	function test_category_permalink_for_leaf_category() {
+	public function test_category_permalink_for_leaf_category() {
 		$cat1_id = $this->factory->category->create( array ( 'slug' => 'aaa', 'name' => 'AAA' ) );
 		$cat2_id = $this->factory->category->create( array ( 'slug' => 'bbb', 'name' => 'BBB', 'parent' => $cat1_id ) );
 		$cat3_id = $this->factory->category->create( array ( 'slug' => 'ccc', 'name' => 'CCC', 'parent' => $cat2_id ) );
@@ -93,7 +94,7 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		$this->assertEquals( 'http://example.org/category/ccc/', get_category_link( $cat3_id ) );
 	}
 
-	function test_category_permalink_for_root_category() {
+	public function test_category_permalink_for_root_category() {
 		$cat1_id = $this->factory->category->create( array ( 'slug' => 'aaa', 'name' => 'AAA' ) );
 		$cat2_id = $this->factory->category->create( array ( 'slug' => 'bbb', 'name' => 'BBB', 'parent' => $cat1_id ) );
 		$cat3_id = $this->factory->category->create( array ( 'slug' => 'ccc', 'name' => 'CCC', 'parent' => $cat2_id ) );
@@ -101,7 +102,7 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		$this->assertEquals( 'http://example.org/category/aaa/', get_category_link( $cat1_id ) );
 	}
 
-	function test_category_permalink_for_midlevel_category() {
+	public function test_category_permalink_for_midlevel_category() {
 		$cat1_id = $this->factory->category->create( array ( 'slug' => 'aaa', 'name' => 'AAA' ) );
 		$cat2_id = $this->factory->category->create( array ( 'slug' => 'bbb', 'name' => 'BBB', 'parent' => $cat1_id ) );
 		$cat3_id = $this->factory->category->create( array ( 'slug' => 'ccc', 'name' => 'CCC', 'parent' => $cat2_id ) );
