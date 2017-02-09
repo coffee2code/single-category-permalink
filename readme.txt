@@ -107,6 +107,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 = () =
 * Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
 * Change: Enable more error output for unit tests.
+* Change: Update copyright date (2017).
 
 = 2.1.2 (2016-03-29) =
 * New: Add LICENSE file.
