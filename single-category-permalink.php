@@ -10,7 +10,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Description: Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
  *
- * Compatible with WordPress 1.5 through 4.5+.
+ * Compatible with WordPress 4.6 through 4.7+.
  *
  * =>> Read the accompanying readme.txt file for instructions and documentation.
  * =>> Also, visit the plugin's homepage for additional information and updates.

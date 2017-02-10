@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: permalink, structure, link, category, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Requires at least: 1.5
-Tested up to: 4.5
+Requires at least: 4.6
+Tested up to: 4.7
 Stable tag: 2.1.2
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
@@ -109,6 +109,8 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 * Change: Change default redirect HTTP status code from 302 to 301.
 * Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
 * Change: Enable more error output for unit tests.
+* Change: Note compatibility through WP 4.7+.
+* Change: Remove support for WordPress older than 4.6 (should still work for earlier versions back to WP 1.5)
 * Change: Update copyright date (2017).
 
 = 2.1.2 (2016-03-29) =
