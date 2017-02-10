@@ -69,7 +69,12 @@ function c2c_single_category_postlink( $permalink, $post ) {
 		// lowest id)
 		$cats = get_the_category( $post->ID );
 		if ( $cats ) {
-			usort( $cats, '_usort_terms_by_ID' ); // order by ID
+			// Order categories by term_id.
+			if ( function_exists( 'wp_list_sort' ) ) { // Introduced in WP 4.7
+				$cats = wp_list_sort( $cats, 'term_id' );
+			} else {
+				usort( $cats, '_usort_terms_by_ID' );
+			}
 			$category = $cats[0];
 		} else {
 			$category = get_category( absint( get_option( 'default_category' ) ) );
