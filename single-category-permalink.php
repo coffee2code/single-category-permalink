@@ -156,7 +156,7 @@ function c2c_single_category_redirect() {
 	}
 
 	if ( $redirect ) {
-		wp_redirect( $redirect, apply_filters( 'c2c_single_category_redirect_status', 302 ) );
+		wp_redirect( $redirect, apply_filters( 'c2c_single_category_redirect_status', 301 ) );
 	}
 }
 endif;
