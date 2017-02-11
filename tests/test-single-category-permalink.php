@@ -33,6 +33,14 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 	//
 
 
+	public function test_class_exists() {
+		$this->assertTrue( class_exists( 'c2c_SingleCategoryPermalink' ) );
+	}
+
+	public function test_hooks_action_admin_menu() {
+		$this->assertEquals( 10, add_action( 'init', array( 'c2c_SingleCategoryPermalink', 'do_init' ) ) );
+	}
+
 	/* Test post permalink */
 
 	public function test_non_hierarchical_category_not_affected() {

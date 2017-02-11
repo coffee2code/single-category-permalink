@@ -107,6 +107,10 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 = () =
 * Fix: Replace use of deprecated (in WP 4.7) `_usort_terms_by_ID()` with `wp_list_sort()` for WP 4.7+.
 * Change: Change default redirect HTTP status code from 302 to 301.
+* Change: Wrap functionality in class.
+    * Create class `c2c_SingleCategoryPermalink`
+    * Deprecate existing functions: `c2c_single_category_catlink()`, `c2c_single_category_postlink()`, `c2c_single_category_redirect()`
+    * Move deprecated function functionality to class methods: `category_link()`, `post_link()`, `template_redirect()`
 * Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
 * Change: Enable more error output for unit tests.
 * Change: Note compatibility through WP 4.7+.
