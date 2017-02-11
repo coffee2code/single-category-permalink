@@ -7,6 +7,8 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 		$this->set_permalink();
+
+		remove_filter( 'c2c_single_category_redirect_status', array( $this, 'change_redirect_status' ) );
 	}
 
 
@@ -23,6 +25,10 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		$GLOBALS['wp_rewrite']->init();
 		add_permastruct( 'category', ltrim( $category_structure, '/' ) );
 		flush_rewrite_rules();
+	}
+
+	public function change_redirect_status( $status ) {
+		return '302';
 	}
 
 
@@ -121,6 +127,25 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 
 		$this->assertEquals( 'http://example.org/category/bbb/', get_category_link( $cat2_id ) );
 	}
+
+	/*
+	 * get_http_redirect_status()
+	 */
+
+	public function test_get_http_redirect_status() {
+		$this->assertEquals( '301', c2c_SingleCategoryPermalink::get_http_redirect_status() );
+	}
+
+	/*
+	 * Filter: c2c_single_category_redirect_status
+	 */
+
+	public function test_default_redirect_status() {
+		add_filter( 'c2c_single_category_redirect_status', array( $this, 'change_redirect_status' ) );
+
+		$this->assertEquals( '302', c2c_SingleCategoryPermalink::get_http_redirect_status() );
+	}
+
 
 	/* TODO: Test redirect of full hierarchical category permalink (post) to shorter version (e.g. /aaa/bbb/ccc/cat-post/ -> /ccc/cat-post/) */
 	/* TODO: Test redirect of full hierarchical category permalink (category) to shorter version (e.g. /category/aaa/bbb/ccc/ -> /category/ccc/) */

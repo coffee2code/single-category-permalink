@@ -82,6 +82,17 @@ class c2c_SingleCategoryPermalink {
 	}
 
 	/**
+	 * Returns the HTTP status to use for redirects.
+	 *
+	 * @since 2.2
+	 *
+	 * @return string
+	 */
+	public static function get_http_redirect_status() {
+		return apply_filters( 'c2c_single_category_redirect_status', 301 );
+	}
+
+	/**
 	 * Returns category URI for a given category.
 	 *
 	 * If the given category is hierarchical, then this function kicks into gear to
@@ -185,7 +196,7 @@ class c2c_SingleCategoryPermalink {
 		}
 
 		if ( $redirect ) {
-			wp_redirect( $redirect, apply_filters( 'c2c_single_category_redirect_status', 301 ) );
+			wp_redirect( $redirect, self::get_http_redirect_status() );
 		}
 	}
 
