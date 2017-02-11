@@ -111,6 +111,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
     * Create class `c2c_SingleCategoryPermalink`
     * Deprecate existing functions: `c2c_single_category_catlink()`, `c2c_single_category_postlink()`, `c2c_single_category_redirect()`
     * Move deprecated function functionality to class methods: `category_link()`, `post_link()`, `template_redirect()`
+    * Add method `version()` to return plugin version
 * Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
 * Change: Enable more error output for unit tests.
 * Change: Note compatibility through WP 4.7+.

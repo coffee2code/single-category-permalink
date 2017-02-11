@@ -37,6 +37,10 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		$this->assertTrue( class_exists( 'c2c_SingleCategoryPermalink' ) );
 	}
 
+	public function test_get_version() {
+		$this->assertEquals( '2.2', c2c_SingleCategoryPermalink::version() );
+	}
+
 	public function test_hooks_action_admin_menu() {
 		$this->assertEquals( 10, add_action( 'init', array( 'c2c_SingleCategoryPermalink', 'do_init' ) ) );
 	}

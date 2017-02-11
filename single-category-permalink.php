@@ -52,6 +52,15 @@ if ( ! class_exists( 'c2c_SingleCategoryPermalink' ) ) :
 class c2c_SingleCategoryPermalink {
 
 	/**
+	 * Returns version of the plugin.
+	 *
+	 * @since 2.2
+	 */
+	public static function version() {
+		return '2.2';
+	}
+
+	/**
 	 * Initialization.
 	 *
 	 * @since 2.2
