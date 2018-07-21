@@ -32,7 +32,7 @@ If you activate the Single Category Permalink plugin, this would be the permalin
 
 `http://www.example.com/wordpress/2008/01/15/best-plugins`
 
-In order for a category to be used as part of a post's permalink structure, %category% must be explicitly defined in the Settings -> Permalinks admin page as part of a custom structure, i.e. `/%category%/%postname%`.
+In order for a category to be used as part of a post's permalink structure, `%category%` must be explicitly defined in the Settings -> Permalinks admin page as part of a custom structure, i.e. `/%category%/%postname%`.
 
 For category links, `%category%` is implied to follow the value set as the "Category base" (or the default category base if none is specified). So if your category base is 'category', the above example would list posts in the 'WordPress' category on this category listing page:
 
@@ -75,7 +75,7 @@ Yes.
 
 == Hooks ==
 
-The plugin exposes one filter for hooking. Typically, customizations utilizing this hook would be put into your active theme's functions.php file, or used by another plugin.
+The plugin exposes one filter for hooking. Code using this filter should ideally be put into a mu-plugin or site-specific plugin (which is beyond the scope of this readme to explain). Less ideally, you could put them in your active theme's functions.php file.
 
 **c2c_single_category_redirect_status (filter)**
 
@@ -88,7 +88,6 @@ Arguments:
 Example:
 
 `
-// Change single category redirect to 302
 /**
  * Change the redirection HTTP status to a 302.
  *
@@ -114,6 +113,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 * Change: Rename readme.txt section from 'Filters' to 'Hooks'
 * Change: Modify formatting of hook name in readme to prevent being uppercased when shown in the Plugin Directory
 * Change: Improve installation instructions
+* Change: Minor readme.txt tweaks
 * Change: Update copyright date (2018)
 
 = 2.2 (2017-02-10) =
