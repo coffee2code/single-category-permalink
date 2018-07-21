@@ -85,6 +85,7 @@ class c2c_SingleCategoryPermalink {
 	 * Returns the HTTP status to use for redirects.
 	 *
 	 * @since 2.2
+	 * @uses filter c2c_single_category_redirect_code
 	 *
 	 * @return string
 	 */
@@ -175,8 +176,6 @@ class c2c_SingleCategoryPermalink {
 	 * Redirects fully hierarchical category links to the single category link.
 	 *
 	 * @since 2.0
-	 *
-	 * @uses filter c2c_single_category_redirect_code
 	 */
 	public static function template_redirect() {
 		global $wp_query, $post;
@@ -254,8 +253,6 @@ if ( ! function_exists( 'c2c_single_category_redirect' ) ) :
  *
  * @since 2.0
  * @deprecated 2.2 Use c2c_SingleCategoryPermalink::template_redirect() instead.
- *
- * @uses filter c2c_single_category_redirect_code
  */
 function c2c_single_category_redirect() {
 	_deprecated_function( __FUNCTION__, '2.2', 'c2c_SingleCategoryPermalink::template_redirect()' );
