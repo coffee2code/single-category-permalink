@@ -77,7 +77,7 @@ Yes.
 
 The plugin exposes one filter for hooking. Typically, customizations utilizing this hook would be put into your active theme's functions.php file, or used by another plugin.
 
-= c2c_single_category_redirect_status (filter) =
+**c2c_single_category_redirect_status (filter)**
 
 The 'c2c_single_category_redirect_status' hook allows you to specify an HTTP status code used for the redirect. By default this is 302.
 
@@ -107,6 +107,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 = () =
 * Change: Note compatibility through WP 4.9+
 * Change: Rename readme.txt section from 'Filters' to 'Hooks'
+* Change: Modify formatting of hook name in readme to prevent being uppercased when shown in the Plugin Directory
 * Change: Update copyright date (2018)
 
 = 2.2 (2017-02-10) =
