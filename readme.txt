@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 4.9
-Stable tag: 2.2
+Stable tag: 2.2.1
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -103,7 +103,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
-= () =
+= 2.2.1 (2018-07-21) =
 * Change: Switch away from using deprecated `c2c_single_category_catlink()` internally
 * Change: Move `@uses` DockBlock entries to `get_http_redirect_status()`
 * New: Unit tests: Add `create_hierarchical_categories()` for creating hierarchical categories so the behavior isn't duplicated in a number of tests
@@ -201,6 +201,9 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 
 == Upgrade Notice ==
+
+= 2.2.1 =
+Trivial update: minor documentation and code formatting tweaks, noted compatibility through WP 4.9+, and updated copyright date (2018)
 
 = 2.2 =
 Recommended update: changed default HTTP redirect status code to 301 (permanent), fixed PHP warning in WP 4.7 due to function deprecation, restructured code, compatibility is now WP 4.6-4.7+, added more unit tests, updated copyright date, more
