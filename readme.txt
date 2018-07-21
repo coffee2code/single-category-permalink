@@ -73,7 +73,7 @@ In addition to handling custom permalink structures (used to generate permalinks
 Yes.
 
 
-== Filters ==
+== Hooks ==
 
 The plugin exposes one filter for hooking. Typically, customizations utilizing this hook would be put into your active theme's functions.php file, or used by another plugin.
 
@@ -106,6 +106,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 = () =
 * Change: Note compatibility through WP 4.9+
+* Change: Rename readme.txt section from 'Filters' to 'Hooks'
 * Change: Update copyright date (2018)
 
 = 2.2 (2017-02-10) =
