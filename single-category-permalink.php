@@ -185,7 +185,7 @@ class c2c_SingleCategoryPermalink {
 
 		if ( is_category() ) {
 			if ( $category_name && $category_name != $wp_query->query_vars['category_name'] ) {
-				$redirect = c2c_single_category_catlink( '', $wp_query->query_vars['cat'] );
+				$redirect = c2c_SingleCategoryPermalink::category_link( '', $wp_query->query_vars['cat'] );
 			}
 		}
 		elseif ( is_single() ) {

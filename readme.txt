@@ -105,6 +105,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 == Changelog ==
 
 = () =
+* Change: Switch away from using deprecated `c2c_single_category_catlink()` internally
 * Change: Move `@uses` DockBlock entries to `get_http_redirect_status()`
 * New: Add README.md
 * New: Add GitHub link to readme
