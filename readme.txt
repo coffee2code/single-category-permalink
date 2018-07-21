@@ -49,9 +49,9 @@ Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/single-category-perma
 
 == Installation ==
 
-1. Unzip `single-category-permalink.zip` inside the `/wp-content/plugins/` directory for your site (or install via the built-in WordPress plugin installer)
-1. Activate the plugin through the 'Plugins' admin menu in WordPress
-1. Use `%category%` as a permalink tag in the `Settings` -> `Permalinks` admin options page when defining a custom permalink structure
+1. Install via the built-in WordPress plugin installer. Or download and unzip `single-category-permalinks.zip` inside the plugins directory for your site (typically `wp-content/plugins/`)
+2. Activate the plugin through the 'Plugins' admin menu in WordPress
+3. Use `%category%` as a permalink tag in the `Settings` -> `Permalinks` admin options page when defining a custom permalink structure
 
 
 == Frequently Asked Questions ==
@@ -113,6 +113,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 * Change: Note compatibility through WP 4.9+
 * Change: Rename readme.txt section from 'Filters' to 'Hooks'
 * Change: Modify formatting of hook name in readme to prevent being uppercased when shown in the Plugin Directory
+* Change: Improve installation instructions
 * Change: Update copyright date (2018)
 
 = 2.2 (2017-02-10) =
