@@ -104,6 +104,9 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
+= () =
+* Change: Update copyright date (2018)
+
 = 2.2 (2017-02-10) =
 * Fix: Replace use of deprecated (in WP 4.7) `_usort_terms_by_ID()` with `wp_list_sort()` for WP 4.7+.
 * Change: Change default redirect HTTP status code from 302 (temporary redirect) to 301 (permanent redirect).
