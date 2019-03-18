@@ -66,13 +66,6 @@ class c2c_SingleCategoryPermalink {
 	 * @since 2.2
 	 */
 	public static function init() {
-		add_action( 'init', array( __CLASS__, 'do_init' ) );
-	}
-
-	/**
-	 * Loads text domain and registers actions/filters.
-	 */
-	public static function do_init() {
 		// Load textdomain.
 		load_plugin_textdomain( 'single-category-permalink' );
 
