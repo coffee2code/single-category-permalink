@@ -90,7 +90,7 @@ class c2c_SingleCategoryPermalink {
 		 *
 		 * @param int The HTTP status code to be used for redirects. Default 301.
 		 */
-		return apply_filters( 'c2c_single_category_redirect_status', 301 );
+		return (int) apply_filters( 'c2c_single_category_redirect_status', 301 );
 	}
 
 	/**

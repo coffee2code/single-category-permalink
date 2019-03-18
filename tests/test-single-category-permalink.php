@@ -28,7 +28,7 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 	}
 
 	public function change_redirect_status( $status ) {
-		return '302';
+		return 302;
 	}
 
 	private function create_hierarchical_categories() {
@@ -126,7 +126,7 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 	 */
 
 	public function test_get_http_redirect_status() {
-		$this->assertEquals( '301', c2c_SingleCategoryPermalink::get_http_redirect_status() );
+		$this->assertEquals( 301, c2c_SingleCategoryPermalink::get_http_redirect_status() );
 	}
 
 	/*
@@ -136,7 +136,7 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 	public function test_default_redirect_status() {
 		add_filter( 'c2c_single_category_redirect_status', array( $this, 'change_redirect_status' ) );
 
-		$this->assertEquals( '302', c2c_SingleCategoryPermalink::get_http_redirect_status() );
+		$this->assertEquals( 302, c2c_SingleCategoryPermalink::get_http_redirect_status() );
 	}
 
 
