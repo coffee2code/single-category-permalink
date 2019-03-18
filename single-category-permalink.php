@@ -201,7 +201,7 @@ class c2c_SingleCategoryPermalink {
 
 } // end c2c_SingleCategoryPermalink
 
-c2c_SingleCategoryPermalink::init();
+add_action( 'plugins_loaded', array( 'c2c_SingleCategoryPermalink', 'init' ) );
 
 endif; // end if !class_exists()
 
