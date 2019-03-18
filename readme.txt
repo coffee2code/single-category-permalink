@@ -104,6 +104,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 == Changelog ==
 
 = () =
+* New: Add CHANGELOG.md file and move all but most recent changelog entries into it
 * New: Add inline documentation for hook
 * Change: Initialize plugin on 'plugins_loaded' action instead of on load
 * Change: Merge `do_init()` into `init()`
@@ -141,72 +142,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 * Change: Remove support for WordPress older than 4.6 (should still work for earlier versions back to WP 1.5)
 * Change: Update copyright date (2017).
 
-= 2.1.2 (2016-03-29) =
-* New: Add LICENSE file.
-* New: Add empty index.php to prevent files from being listed if web server has enabled directory listings.
-* New: Add 'Text Domain' to plugin header.
-* Change: Minor code reformatting.
-* Change: Explicitly declare methods in unit tests as public; minor unit test doc reformatting.
-* Change: Note compatibility through WP 4.5+.
-* Change: Update copyright date (2016).
-
-= 2.1.1 (2015-02-17) =
-* Reformat plugin header
-* Note compatibility through WP 4.1+
-* Change documentation links to wp.org to be https
-* Update copyright date (2015)
-* Add plugin icon
-
-= 2.1 (2014-01-24) =
-* Add unit tests
-* Minor documentation improvements
-* Minor code reformatting (spacing, bracing)
-* Note compatibility through WP 3.8+
-* Update copyright date (2014)
-* Change donate link
-* Add banner
-
-= 2.0.4 =
-* Add check to prevent execution of code if file is directly accessed
-* Note compatibility through WP 3.5+
-* Update copyright date (2013)
-* Minor code reformatting (spacing)
-
-= 2.0.3 =
-* Re-license as GPLv2 or later (from X11)
-* Add 'License' and 'License URI' header tags to readme.txt and plugin file
-* Remove ending PHP close tag
-* Note compatibility through WP 3.4+
-
-= 2.0.2 =
-* Note compatibility through WP 3.3+
-* Add link to plugin directory page to readme.txt
-* Update copyright date (2012)
-
-= 2.0.1 =
-* Fix bug triggered when creating new post
-
-= 2.0 =
-* Fix compatibility bug relating to generation of category permalink
-* Rename single_category_postlink() to c2c_single_category_postlink()
-* Rename single_category_catlink() to c2c_single_category_catlink()
-* Add c2c_single_category_redirect() to redirect hierarchical category links to the single category alternative
-* Add filter 'c2c_single_category_redirect_status' to allow override of default redirect status code
-* Wrap all functions in if (!function_exists()) check
-* Remove docs from top of plugin file (all that and more are in readme.txt)
-* Add plugin homepage and author links in description in readme.txt
-* Note compatibility through WP3.2+
-* Add PHPDoc documentation
-* Expand documentation in readme.txt
-* Minor tweaks to code formatting (spacing)
-* Minor documentation reformatting in readme.txt
-* Change description
-* Add package info to top of plugin file
-* Add Frequently Asked Questions, Filters, Changelog, and Upgrade Notice sections to readme.txt
-* Update copyright date (2011)
-
-= 1.0 =
-* Initial release
+_Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/single-category-permalink/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
