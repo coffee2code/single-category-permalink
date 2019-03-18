@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Single Category Permalink
- * Version:     2.2.1
+ * Version:     2.3
  * Plugin URI:  http://coffee2code.com/wp-plugins/single-category-permalink/
  * Author:      Scott Reilly
  * Author URI:  http://coffee2code.com/
@@ -18,13 +18,15 @@
  *
  * @package Single_Category_Permalink
  * @author  Scott Reilly
- * @version 2.2.1
+ * @version 2.3
  */
 
 /*
  * TODO:
- * - Wrap functions in a class.
  * - Test if sub-category pagination is broken.
+ * - Add filters to allow separate control of whether single-category is enforced
+ *   for category URLs and post URLs (w/ '%category%' in permalink). See:
+ *   https://wordpress.org/support/topic/good-plugin-needs-to-be-configurable/
  */
 
 /*
@@ -57,7 +59,7 @@ class c2c_SingleCategoryPermalink {
 	 * @since 2.2
 	 */
 	public static function version() {
-		return '2.2.1';
+		return '2.3';
 	}
 
 	/**

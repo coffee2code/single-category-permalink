@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.1
-Stable tag: 2.2.1
+Stable tag: 2.3
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -103,7 +103,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
-= () =
+= 2.3 (2019-03-18) =
 * New: Add CHANGELOG.md file and move all but most recent changelog entries into it
 * New: Add inline documentation for hook
 * Change: Initialize plugin on 'plugins_loaded' action instead of on load
@@ -147,6 +147,9 @@ _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/si
 
 
 == Upgrade Notice ==
+
+= 2.3 =
+Minor update: tweaked plugin initialization process, created CHANGELOG.md to store historical changelog outside of readme.txt, noted compatibility through WP 5.1+, updated copyright date (2019)
 
 = 2.2.1 =
 Trivial update: minor documentation and code formatting tweaks, noted compatibility through WP 4.9+, and updated copyright date (2018)

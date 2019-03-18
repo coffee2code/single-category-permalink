@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.3 _(2019-03-18)_
+* New: Add CHANGELOG.md file and move all but most recent changelog entries into it
+* New: Add inline documentation for hook
+* Change: Initialize plugin on 'plugins_loaded' action instead of on load
+* Change: Merge `do_init()` into `init()`
+* CHange: Cast return value of `c2c_single_category_redirect_status` filter as integer
+* Change: Split paragraph in README.md's "Support" section into two
+* Change: Note compatibility through WP 5.1+
+* Change: Update copyright date (2019)
+* Change: Update License URI to be HTTPS
+
 ## 2.2.1 _(2018-07-21)_
 * Change: Switch away from using deprecated `c2c_single_category_catlink()` internally
 * Change: Move `@uses` DockBlock entries to `get_http_redirect_status()`
