@@ -104,6 +104,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 == Changelog ==
 
 = () =
+* Change: Update copyright date (2019)
 * Change: Update License URI to be HTTPS
 
 = 2.2.1 (2018-07-21) =
