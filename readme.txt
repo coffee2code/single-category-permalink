@@ -104,6 +104,7 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 == Changelog ==
 
 = () =
+* New: Add inline documentation for hook
 * Change: Initialize plugin on 'plugins_loaded' action instead of on load
 * Change: Merge `do_init()` into `init()`
 * Change: Split paragraph in README.md's "Support" section into two

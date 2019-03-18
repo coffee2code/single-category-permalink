@@ -83,6 +83,13 @@ class c2c_SingleCategoryPermalink {
 	 * @return string
 	 */
 	public static function get_http_redirect_status() {
+		/**
+		 * Filters the HTTP status code used for redirects.
+		 *
+		 * @since 2.0
+		 *
+		 * @param int The HTTP status code to be used for redirects. Default 301.
+		 */
 		return apply_filters( 'c2c_single_category_redirect_status', 301 );
 	}
 
