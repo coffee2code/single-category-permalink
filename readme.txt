@@ -3,7 +3,7 @@ Contributors: coffee2code
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ARCFJ9TX3522
 Tags: permalink, structure, link, category, coffee2code
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 4.9
 Stable tag: 2.2.1
@@ -102,6 +102,9 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 
 == Changelog ==
+
+= () =
+* Change: Update License URI to be HTTPS
 
 = 2.2.1 (2018-07-21) =
 * Change: Switch away from using deprecated `c2c_single_category_catlink()` internally

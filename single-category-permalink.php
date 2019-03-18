@@ -7,7 +7,7 @@
  * Author URI:  http://coffee2code.com/
  * Text Domain: single-category-permalink
  * License:     GPLv2 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Description: Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
  *
  * Compatible with WordPress 4.6 through 4.9+.
