@@ -54,8 +54,8 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		$this->assertEquals( '2.3', c2c_SingleCategoryPermalink::version() );
 	}
 
-	public function test_hooks_action_admin_menu() {
-		$this->assertEquals( 10, add_action( 'init', array( 'c2c_SingleCategoryPermalink', 'do_init' ) ) );
+	public function test_hooks_plugins_loaded() {
+		$this->assertEquals( 10, has_action( 'plugins_loaded', array( 'c2c_SingleCategoryPermalink', 'init' ) ) );
 	}
 
 	/* Test post permalink */

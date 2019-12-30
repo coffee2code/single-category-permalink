@@ -1,7 +1,9 @@
 # Changelog
 
 ## _(in-progress)_
-* Change: Update unit test install script and bootstrap to use latest WP unit test repo
+* Unit tests:
+    * Change: Update unit test install script and bootstrap to use latest WP unit test repo
+    * Fix: Rename and fix miscoded test for plugin initialization
 * Change: Note compatibility through WP 5.3+
 * Change: Update copyright date (2020)
 * Fix: Correct typo in GitHub URL
