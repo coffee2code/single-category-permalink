@@ -44,7 +44,7 @@ With this plugin activated, that link would become:
 
 NOTE: The fully hierarchical category and post permalinks will continue to work. The plugin issues a 302 redirect to browsers and search engines pointing them to the shorter URL.
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/single-category-permalink/) | [Plugin Directory Page](https://wordpress.org/plugins/single-category-permalink/) | [GitHub](https://github.com/coffe2code/single-category-permalink/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/single-category-permalink/) | [Plugin Directory Page](https://wordpress.org/plugins/single-category-permalink/) | [GitHub](https://github.com/coffee2code/single-category-permalink/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
