@@ -3,6 +3,7 @@
 ## _(in-progress)_
 * Unit tests:
     * Change: Update unit test install script and bootstrap to use latest WP unit test repo
+    * New: Add test for default hooks
     * Fix: Rename and fix miscoded test for plugin initialization
 * Change: Note compatibility through WP 5.3+
 * Change: Update copyright date (2020)

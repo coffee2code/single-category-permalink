@@ -58,6 +58,12 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		$this->assertEquals( 10, has_action( 'plugins_loaded', array( 'c2c_SingleCategoryPermalink', 'init' ) ) );
 	}
 
+	public function test_default_hooks() {
+		$this->assertEquals( 10, has_filter( 'category_link',     array( 'c2c_SingleCategoryPermalink', 'category_link' ) ) );
+		$this->assertEquals( 10, has_filter( 'post_link',         array( 'c2c_SingleCategoryPermalink', 'post_link' ) ) );
+		$this->assertEquals( 10, has_filter( 'template_redirect', array( 'c2c_SingleCategoryPermalink', 'template_redirect' ) ) );
+	}
+
 	/* Test post permalink */
 
 	public function test_non_hierarchical_category_not_affected() {
