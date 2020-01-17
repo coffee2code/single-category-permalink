@@ -2,6 +2,7 @@
 
 ## _(in-progress)_
 * Change: Use `term_link` filter instead of the deprecated `category_link` filter. Props webgmclassics.
+* New: Add TODO.md and move existing TODO list from top of main plugin file into it (and add more items to the list)
 * Unit tests:
     * Change: Update unit test install script and bootstrap to use latest WP unit test repo
     * New: Add test for default hooks

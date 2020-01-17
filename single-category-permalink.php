@@ -22,14 +22,6 @@
  */
 
 /*
- * TODO:
- * - Test if sub-category pagination is broken.
- * - Add filters to allow separate control of whether single-category is enforced
- *   for category URLs and post URLs (w/ '%category%' in permalink). See:
- *   https://wordpress.org/support/topic/good-plugin-needs-to-be-configurable/
- */
-
-/*
 	Copyright (c) 2007-2020 by Scott Reilly (aka coffee2code)
 
 	This program is free software; you can redistribute it and/or
