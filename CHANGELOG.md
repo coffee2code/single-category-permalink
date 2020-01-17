@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* Change: Use `term_link` filter instead of the deprecated `category_link` filter. Props webgmclassics.
 * Unit tests:
     * Change: Update unit test install script and bootstrap to use latest WP unit test repo
     * New: Add test for default hooks

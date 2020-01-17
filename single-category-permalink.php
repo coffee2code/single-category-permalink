@@ -71,7 +71,7 @@ class c2c_SingleCategoryPermalink {
 		// Load textdomain.
 		load_plugin_textdomain( 'single-category-permalink' );
 
-		add_filter( 'category_link',     array( __CLASS__, 'category_link' ),    10, 2 );
+		add_filter( 'term_link',         array( __CLASS__, 'category_link' ),    10, 2 );
 		add_filter( 'post_link',         array( __CLASS__, 'post_link' ),        10, 2 );
 		add_filter( 'template_redirect', array( __CLASS__, 'template_redirect' )       );
 	}

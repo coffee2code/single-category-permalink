@@ -59,7 +59,7 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 	}
 
 	public function test_default_hooks() {
-		$this->assertEquals( 10, has_filter( 'category_link',     array( 'c2c_SingleCategoryPermalink', 'category_link' ) ) );
+		$this->assertEquals( 10, has_filter( 'term_link',         array( 'c2c_SingleCategoryPermalink', 'category_link' ) ) );
 		$this->assertEquals( 10, has_filter( 'post_link',         array( 'c2c_SingleCategoryPermalink', 'post_link' ) ) );
 		$this->assertEquals( 10, has_filter( 'template_redirect', array( 'c2c_SingleCategoryPermalink', 'template_redirect' ) ) );
 	}
