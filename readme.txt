@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.3
-Stable tag: 2.3
+Stable tag: 2.4
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -103,6 +103,17 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
+= 2.4 (2020-01-17) =
+* Change: Use `term_link` filter instead of the deprecated `category_link` filter. Props webgmclassics.
+* New: Add TODO.md and move existing TODO list from top of main plugin file into it (and add more items to the list)
+* Unit tests:
+    * Change: Update unit test install script and bootstrap to use latest WP unit test repo
+    * New: Add test for default hooks
+    * Fix: Rename and fix miscoded test for plugin initialization
+* Change: Note compatibility through WP 5.3+
+* Change: Update copyright date (2020)
+* Fix: Correct typo in GitHub URL
+
 = 2.3 (2019-03-18) =
 * New: Add CHANGELOG.md file and move all but most recent changelog entries into it
 * New: Add inline documentation for hook
@@ -128,25 +139,13 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 * Change: Minor readme.txt tweaks
 * Change: Update copyright date (2018)
 
-= 2.2 (2017-02-10) =
-* Fix: Replace use of deprecated (in WP 4.7) `_usort_terms_by_ID()` with `wp_list_sort()` for WP 4.7+.
-* Change: Change default redirect HTTP status code from 302 (temporary redirect) to 301 (permanent redirect).
-* Change: Wrap functionality in class.
-    * Create class `c2c_SingleCategoryPermalink`
-    * Deprecate existing functions: `c2c_single_category_catlink()`, `c2c_single_category_postlink()`, `c2c_single_category_redirect()`
-    * Move deprecated function functionality to class methods: `category_link()`, `post_link()`, `template_redirect()`
-    * Add method `version()` to return plugin version
-* Add `get_http_redirect_status()` for getting the HTTP status code for redirects.
-* Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
-* Change: Enable more error output for unit tests.
-* Change: Note compatibility through WP 4.7+.
-* Change: Remove support for WordPress older than 4.6 (should still work for earlier versions back to WP 1.5)
-* Change: Update copyright date (2017).
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/single-category-permalink/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.4 =
+Minor update: modernized unit tests, noted compatibility through WP 5.3+, added TODO.md, and updated copyright date (2020)
 
 = 2.3 =
 Minor update: tweaked plugin initialization process, created CHANGELOG.md to store historical changelog outside of readme.txt, noted compatibility through WP 5.1+, updated copyright date (2019)
