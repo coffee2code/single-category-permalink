@@ -1,6 +1,6 @@
 # Changelog
 
-## _(in-progress)_
+## 2.4.1 _(2020-01-18)_
 * Fix: Prevent interfering with permalinks for non-category taxonomies. Props mynameisrabby.
 
 ## 2.4 _(2020-01-17)_

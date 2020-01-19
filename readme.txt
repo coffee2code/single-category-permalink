@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.3
-Stable tag: 2.4
+Stable tag: 2.4.1
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -103,6 +103,9 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
+= 2.4.1 (2020-01-18) =
+* Fix: Prevent interfering with permalinks for non-category taxonomies. Props mynameisrabby.
+
 = 2.4 (2020-01-17) =
 * Change: Use `term_link` filter instead of the deprecated `category_link` filter. Props webgmclassics.
 * New: Add TODO.md and move existing TODO list from top of main plugin file into it (and add more items to the list)
@@ -125,24 +128,13 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 * Change: Update copyright date (2019)
 * Change: Update License URI to be HTTPS
 
-= 2.2.1 (2018-07-21) =
-* Change: Switch away from using deprecated `c2c_single_category_catlink()` internally
-* Change: Move `@uses` DockBlock entries to `get_http_redirect_status()`
-* New: Unit tests: Add `create_hierarchical_categories()` for creating hierarchical categories so the behavior isn't duplicated in a number of tests
-* New: Add README.md
-* New: Add GitHub link to readme
-* Change: Minor whitespace tweaks to unit test bootstrap
-* Change: Note compatibility through WP 4.9+
-* Change: Rename readme.txt section from 'Filters' to 'Hooks'
-* Change: Modify formatting of hook name in readme to prevent being uppercased when shown in the Plugin Directory
-* Change: Improve installation instructions
-* Change: Minor readme.txt tweaks
-* Change: Update copyright date (2018)
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/single-category-permalink/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.4.1 (2020-01-18) =
+Recommended bugfix release: prevented interfering with permalinks for non-category taxonomies
 
 = 2.4 =
 Minor update: modernized unit tests, noted compatibility through WP 5.3+, added TODO.md, and updated copyright date (2020)
