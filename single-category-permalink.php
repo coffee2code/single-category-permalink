@@ -63,7 +63,7 @@ class c2c_SingleCategoryPermalink {
 		// Load textdomain.
 		load_plugin_textdomain( 'single-category-permalink' );
 
-		add_filter( 'term_link',         array( __CLASS__, 'category_link' ),    10, 2 );
+		add_filter( 'term_link',         array( __CLASS__, 'category_link' ),    10, 3 );
 		add_filter( 'post_link',         array( __CLASS__, 'post_link' ),        10, 2 );
 		add_filter( 'template_redirect', array( __CLASS__, 'template_redirect' )       );
 	}
@@ -95,10 +95,16 @@ class c2c_SingleCategoryPermalink {
 	 *
 	 * @param  string $catlink     The default URI for the category
 	 * @param  int    $category_id The category ID
+	 * @param  string $taxonomy    Taxonomy slug.
 	 * @return string The category URI
 	 */
-	public static function category_link( $catlink, $category_id ) {
+	public static function category_link( $catlink, $category_id, $taxonomy ) {
 		global $wp_rewrite;
+
+		// Bail early if taxonomy is not 'category'.
+		if ( 'category' !== $taxonomy ) {
+			return $catlink;
+		}
 
 		$catlink = $wp_rewrite->get_category_permastruct();
 

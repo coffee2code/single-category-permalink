@@ -109,6 +109,20 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 
 	/* Test category permalink */
 
+	public function test_non_category_hierarchical_taxonomy_not_affected() {
+		register_taxonomy( 'color', 'post', array(
+			'hierarchical' => true,
+			'has_archive'  => true,
+			'rewrite'      => array( 'hierarchical' => true ),
+		) );
+
+		$term1_id = $this->factory->term->create( array ( 'taxonomy' => 'color', 'slug' => 'aaa', 'name' => 'AAA' ) );
+		$term2_id = $this->factory->term->create( array ( 'taxonomy' => 'color', 'slug' => 'bbb', 'name' => 'BBB', 'parent' => $term1_id ) );
+		$term3_id = $this->factory->term->create( array ( 'taxonomy' => 'color', 'slug' => 'ccc', 'name' => 'CCC', 'parent' => $term2_id ) );
+
+		$this->assertEquals( 'http://example.org/color/aaa/bbb/ccc/', get_term_link( $term3_id ) );
+	}
+
 	public function test_category_permalink_for_leaf_category() {
 		list( $cat1_id, $cat2_id, $cat3_id ) = $this->create_hierarchical_categories();
 

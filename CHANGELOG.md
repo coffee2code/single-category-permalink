@@ -1,5 +1,8 @@
 # Changelog
 
+## _(in-progress)_
+* Fix: Prevent interfering with permalinks for non-category taxonomies. Props mynameisrabby.
+
 ## 2.4 _(2020-01-17)_
 * Change: Use `term_link` filter instead of the deprecated `category_link` filter. Props webgmclassics.
 * New: Add TODO.md and move existing TODO list from top of main plugin file into it (and add more items to the list)
