@@ -1,5 +1,8 @@
 # Changelog
 
+## _(in-progress)_
+* Change: Note compatibility through WP 5.4+
+
 ## 2.4.1 _(2020-01-18)_
 * Fix: Prevent interfering with permalinks for non-category taxonomies. Props mynameisrabby.
 

@@ -5,7 +5,7 @@ Tags: permalink, structure, link, category, coffee2code
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
-Tested up to: 5.3
+Tested up to: 5.4
 Stable tag: 2.4.1
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
