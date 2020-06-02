@@ -26,21 +26,21 @@ Applications
 
 By default, if you have a permalink structure defined as `%category%/%year%/%monthnum%/%day%/%postname%`, your post titled "Best Plugins" assigned to the "WordPress" category would have a permalink of:
 
-`http://www.example.com/applications/web/wordpress/2008/01/15/best-plugins`
+`https://www.example.com/applications/web/wordpress/2008/01/15/best-plugins`
 
 If you activate the Single Category Permalink plugin, this would be the permalink generated for the post (and recognized by the blog):
 
-`http://www.example.com/wordpress/2008/01/15/best-plugins`
+`https://www.example.com/wordpress/2008/01/15/best-plugins`
 
 In order for a category to be used as part of a post's permalink structure, `%category%` must be explicitly defined in the Settings -> Permalinks admin page as part of a custom structure, i.e. `/%category%/%postname%`.
 
 For category links, `%category%` is implied to follow the value set as the "Category base" (or the default category base if none is specified). So if your category base is 'category', the above example would list posts in the 'WordPress' category on this category listing page:
 
-`http://www.example.com/category/applications/web/wordpress/`
+`https://www.example.com/category/applications/web/wordpress/`
 
 With this plugin activated, that link would become:
 
-`http://www.example.com/category/wordpress/`
+`https://www.example.com/category/wordpress/`
 
 NOTE: The fully hierarchical category and post permalinks will continue to work. The plugin issues a 302 redirect to browsers and search engines pointing them to the shorter URL.
 
