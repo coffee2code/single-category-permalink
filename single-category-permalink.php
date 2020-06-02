@@ -2,9 +2,9 @@
 /**
  * Plugin Name: Single Category Permalink
  * Version:     2.4.1
- * Plugin URI:  http://coffee2code.com/wp-plugins/single-category-permalink/
+ * Plugin URI:  https://coffee2code.com/wp-plugins/single-category-permalink/
  * Author:      Scott Reilly
- * Author URI:  http://coffee2code.com/
+ * Author URI:  https://coffee2code.com/
  * Text Domain: single-category-permalink
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
