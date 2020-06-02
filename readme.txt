@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.4
-Stable tag: 2.4.1
+Stable tag: 2.4.2
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -103,6 +103,13 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
+= 2.4.2 (2020-06-01) =
+* Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests (and remove commented-out code)
+* Change: Note compatibility through WP 5.4+
+* Change: Update links to coffee2code.com to be HTTPS
+* Change: Update URLs used in examples to be HTTPS
+* Change: Unit tests: Remove unnecessary unregistering of hooks
+
 = 2.4.1 (2020-01-18) =
 * Fix: Prevent interfering with permalinks for non-category taxonomies. Props mynameisrabby.
 
@@ -117,23 +124,15 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 * Change: Update copyright date (2020)
 * Fix: Correct typo in GitHub URL
 
-= 2.3 (2019-03-18) =
-* New: Add CHANGELOG.md file and move all but most recent changelog entries into it
-* New: Add inline documentation for hook
-* Change: Initialize plugin on 'plugins_loaded' action instead of on load
-* Change: Merge `do_init()` into `init()`
-* CHange: Cast return value of `c2c_single_category_redirect_status` filter as integer
-* Change: Split paragraph in README.md's "Support" section into two
-* Change: Note compatibility through WP 5.1+
-* Change: Update copyright date (2019)
-* Change: Update License URI to be HTTPS
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/single-category-permalink/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
 
-= 2.4.1 (2020-01-18) =
+= 2.4.2 =
+Trivial update: Updated a few URLs to be HTTPS and noted compatibility through WP 5.4+
+
+= 2.4.1 =
 Recommended bugfix release: prevented interfering with permalinks for non-category taxonomies
 
 = 2.4 =
