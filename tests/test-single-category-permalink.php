@@ -7,8 +7,6 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 		$this->set_permalink();
-
-		remove_filter( 'c2c_single_category_redirect_status', array( $this, 'change_redirect_status' ) );
 	}
 
 
