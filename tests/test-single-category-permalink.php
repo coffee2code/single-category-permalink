@@ -157,6 +157,16 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		$this->assertEquals( 302, c2c_SingleCategoryPermalink::get_http_redirect_status() );
 	}
 
+	/*
+	 * category_link()
+	 */
+
+	public function test_category_link_returns_wp_error_for_invalid_category_id() {
+		$expected = 'http://example.com/some/aaa/';
+
+		$this->assertTrue( is_null( c2c_SingleCategoryPermalink::category_link( $expected, 999999, 'category' ) ) );
+	}
+
 
 	/* TODO: Test redirect of full hierarchical category permalink (post) to shorter version (e.g. /aaa/bbb/ccc/cat-post/ -> /ccc/cat-post/) */
 	/* TODO: Test redirect of full hierarchical category permalink (category) to shorter version (e.g. /category/aaa/bbb/ccc/ -> /category/ccc/) */

@@ -113,7 +113,7 @@ class c2c_SingleCategoryPermalink {
 			$catlink = $file . '?cat=' . $category_id;
 		} else {
 			$category = get_category( $category_id );
-			if ( is_wp_error( $category ) ) {
+			if ( ! $category || is_wp_error( $category ) ) {
 				return $category;
 			}
 			$category_nicename = $category->slug;
