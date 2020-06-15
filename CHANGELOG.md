@@ -3,6 +3,7 @@
 ## _(in-progress)_
 * Fix: Default the `$taxonomy` argument of `category_link()` to 'category' to avoid a PHP warning/error
 * Fix: Handle the possibility that `get_category()` could return `null` for an invalid category ID
+* Change: Update docs for return value of `category_link()` to reflect that `WP_Error` or `null` are also possible values
 * New: Unit tests: Add tests for `category_link()`
 
 ## 2.4.2 _(2020-06-01)_
