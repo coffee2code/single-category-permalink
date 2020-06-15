@@ -161,12 +161,43 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 	 * category_link()
 	 */
 
+	public function test_category_link_does_not_affect_link_for_non_category() {
+		$cat_id  = $this->factory->category->create( array ( 'slug' => 'aaa', 'name' => 'AAA' ) );
+		$expected = 'http://example.com/some/aaa/';
+
+		$this->assertEquals( $expected, c2c_SingleCategoryPermalink::category_link( $expected, $cat_id, 'something' ) );
+	}
+
 	public function test_category_link_returns_wp_error_for_invalid_category_id() {
 		$expected = 'http://example.com/some/aaa/';
 
 		$this->assertTrue( is_null( c2c_SingleCategoryPermalink::category_link( $expected, 999999, 'category' ) ) );
 	}
 
+	public function test_category_link_returns_wp_error_for_empty_category_id() {
+		$expected = 'http://example.com/some/aaa/';
+
+		$this->assertTrue( is_wp_error( c2c_SingleCategoryPermalink::category_link( $expected, '', 'category' ) ) );
+		$this->assertTrue( is_wp_error( c2c_SingleCategoryPermalink::category_link( $expected, null, 'category' ) ) );
+		$this->assertTrue( is_wp_error( c2c_SingleCategoryPermalink::category_link( $expected, false, 'category' ) ) );
+	}
+
+	public function test_category_link_when_no_category_permastruct_defined_and_invalid_category_id() {
+		$this->unset_permalink_structures();
+
+		$this->assertEquals( 'http://example.org/?cat=999999', c2c_SingleCategoryPermalink::category_link( 'url', 999999, 'category' ) );
+	}
+
+	public function test_category_link_when_no_category_permastruct_defined_and_valid_category_id() {
+		$cat_id  = $this->factory->category->create( array ( 'slug' => 'aaa', 'name' => 'AAA' ) );
+		$this->unset_permalink_structures();
+
+		$this->assertEquals( 'http://example.org/?cat=' . $cat_id, c2c_SingleCategoryPermalink::category_link( 'url', $cat_id, 'category' ) );
+	}
+
+	public function test_category_link_with_valid_category_id() {
+
+	}
 
 	/* TODO: Test redirect of full hierarchical category permalink (post) to shorter version (e.g. /aaa/bbb/ccc/cat-post/ -> /ccc/cat-post/) */
 	/* TODO: Test redirect of full hierarchical category permalink (category) to shorter version (e.g. /category/aaa/bbb/ccc/ -> /category/ccc/) */
