@@ -25,6 +25,15 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		flush_rewrite_rules();
 	}
 
+	private function unset_permalink_structures() {
+		global $wp_rewrite;
+
+		$wp_rewrite->remove_permastruct( 'category' );
+		delete_option( 'permalink_structure' );
+		delete_option( 'category_base' );
+		$wp_rewrite->init();
+	}
+
 	public function change_redirect_status( $status ) {
 		return 302;
 	}

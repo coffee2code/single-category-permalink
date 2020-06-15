@@ -5,7 +5,9 @@
 * Fix: Handle the possibility that `get_category()` could return `null` for an invalid category ID
 * New: Add a TODO item about removing deprecated functions (which is not something I want to do just yet, hence the TODO)
 * Change: Update docs for return value of `category_link()` to reflect that `WP_Error` or `null` are also possible values
-* New: Unit tests: Add tests for `category_link()`
+* Unit tests:
+    * New: Add tests for `category_link()`
+    * New: Add `unset_permalink_structures()` to unset configured permalink structures
 
 ## 2.4.2 _(2020-06-01)_
 * Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests (and remove commented-out code)
