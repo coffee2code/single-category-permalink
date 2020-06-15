@@ -1,5 +1,8 @@
 # Changelog
 
+## _(in-progress)_
+* Fix: Default the `$taxonomy` argument of `category_link()` to 'category' to avoid a PHP warning/error
+
 ## 2.4.2 _(2020-06-01)_
 * Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests (and remove commented-out code)
 * Change: Note compatibility through WP 5.4+

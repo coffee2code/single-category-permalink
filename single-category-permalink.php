@@ -95,10 +95,10 @@ class c2c_SingleCategoryPermalink {
 	 *
 	 * @param  string $catlink     The default URI for the category
 	 * @param  int    $category_id The category ID
-	 * @param  string $taxonomy    Taxonomy slug.
+	 * @param  string $taxonomy    Taxonomy slug. Default 'category'.
 	 * @return string The category URI
 	 */
-	public static function category_link( $catlink, $category_id, $taxonomy ) {
+	public static function category_link( $catlink, $category_id, $taxonomy = 'category' ) {
 		global $wp_rewrite;
 
 		// Bail early if taxonomy is not 'category'.
