@@ -6,6 +6,12 @@
 * New: Add a TODO item about removing deprecated functions (which is not something I want to do just yet, hence the TODO)
 * Change: Update docs for return value of `category_link()` to reflect that `WP_Error` or `null` are also possible values
 * Change: Note compatibility through WP 5.5+
+* Change: Restructure unit test file structure
+    * New: Create new subdirectory `phpunit/` to house all files related to unit testing
+    * Change: Move `bin/` to `phpunit/bin/`
+    * Change: Move `tests/bootstrap.php` to `phpunit/`
+    * Change: Move `tests/` to `phpunit/tests/`
+    * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
 * Unit tests:
     * New: Add tests for `category_link()`
     * New: Add `unset_permalink_structures()` to unset configured permalink structures
