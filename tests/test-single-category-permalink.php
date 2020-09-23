@@ -205,7 +205,9 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 	}
 
 	public function test_category_link_with_valid_category_id() {
+		list( $cat1_id, $cat2_id, $cat3_id ) = $this->create_hierarchical_categories();
 
+		$this->assertEquals( 'http://example.org/category/ccc/', c2c_SingleCategoryPermalink::category_link( 'url', $cat3_id, 'category' ) );
 	}
 
 	/* TODO: Test redirect of full hierarchical category permalink (post) to shorter version (e.g. /aaa/bbb/ccc/cat-post/ -> /ccc/cat-post/) */
