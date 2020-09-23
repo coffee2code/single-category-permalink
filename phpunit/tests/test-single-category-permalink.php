@@ -210,6 +210,70 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 		$this->assertEquals( 'http://example.org/category/ccc/', c2c_SingleCategoryPermalink::category_link( 'url', $cat3_id, 'category' ) );
 	}
 
+	/*
+	 * post_link()
+	 */
+
+	public function test_post_link_non_hierarchical_category_not_affected() {
+		$cat_id  = $this->factory->category->create( array ( 'slug' => 'aaa', 'name' => 'AAA' ) );
+		$post = $this->factory->post->create_and_get( array( 'post_title' => 'Cat Post' ) );
+		wp_set_post_categories( $post->ID, $cat_id );
+
+		$expected = 'http://example.org/aaa/cat-post/';
+
+		$this->assertEquals( $expected, c2c_SingleCategoryPermalink::post_link( $expected, $post ) );
+	}
+
+	public function test_post_link_post_assigned_hierarchical_leaf_category() {
+		list( $cat1_id, $cat2_id, $cat3_id ) = $this->create_hierarchical_categories();
+		$post = $this->factory->post->create_and_get( array( 'post_title' => 'Cat Post' ) );
+		wp_set_post_categories( $post->ID, $cat3_id );
+
+		$this->assertEquals( 'http://example.org/ccc/cat-post/', c2c_SingleCategoryPermalink::post_link( 'http://example.org/aaa/bbb/ccc/cat-post/', $post ) );
+	}
+
+	public function test_post_link_post_assigned_hierarchical_root_category() {
+		list( $cat1_id, $cat2_id, $cat3_id ) = $this->create_hierarchical_categories();
+		$post = $this->factory->post->create_and_get( array( 'post_title' => 'Cat Post' ) );
+		wp_set_post_categories( $post->ID, $cat1_id );
+
+		$this->assertEquals( 'http://example.org/aaa/cat-post/', c2c_SingleCategoryPermalink::post_link( 'http://example.org/aaa/cat-post/', $post ) );
+	}
+
+	public function test_post_link_post_assigned_hierarchical_midlevel_category() {
+		list( $cat1_id, $cat2_id, $cat3_id ) = $this->create_hierarchical_categories();
+		$post = $this->factory->post->create_and_get( array( 'post_title' => 'Cat Post' ) );
+		wp_set_post_categories( $post->ID, $cat2_id );
+
+		$this->assertEquals( 'http://example.org/bbb/cat-post/', c2c_SingleCategoryPermalink::post_link( 'http://example.org/aaa/bbb/cat-post/', $post ) );
+	}
+
+	public function test_post_link_post_assigned_multiple_hierarchical_leaf_categories() {
+		list( $cat1_id, $cat2_id, $cat3_id ) = $this->create_hierarchical_categories();
+		$cat4_id = $this->factory->category->create( array ( 'slug' => 'ddd', 'name' => 'DDD' ) );
+		$post = $this->factory->post->create_and_get( array( 'post_title' => 'Cat Post' ) );
+		wp_set_post_categories( $post->ID, array( $cat3_id, $cat4_id ) );
+
+		$this->assertEquals( 'http://example.org/ccc/cat-post/', c2c_SingleCategoryPermalink::post_link( 'http://example.org/aaa/bbb/ccc/cat-post/', $post ) );
+	}
+
+	public function test_post_link_post_assigned_hierarchical_root_category_with_same_name_as_post() {
+		list( $cat1_id, $cat2_id, $cat3_id ) = $this->create_hierarchical_categories();
+		$post = $this->factory->post->create_and_get( array( 'post_title' => 'aaahhh' ) );
+		wp_set_post_categories( $post->ID, $cat1_id );
+
+		$this->assertEquals( 'http://example.org/aaa/aaa/', c2c_SingleCategoryPermalink::post_link( 'http://example.org/aaa/aaa/', $post ) );
+	}
+
+	public function test_post_link_post_assigned_hierarchical_leaf_category_with_same_name_as_post() {
+		list( $cat1_id, $cat2_id, $cat3_id ) = $this->create_hierarchical_categories();
+		$post = $this->factory->post->create_and_get( array( 'post_title' => 'ccc' ) );
+		wp_set_post_categories( $post->ID, $cat3_id );
+
+		$this->assertEquals( 'http://example.org/ccc/ccc/', c2c_SingleCategoryPermalink::post_link( 'http://example.org/aaa/bbb/ccc/ccc/', $post ) );
+	}
+
+
 	/* TODO: Test redirect of full hierarchical category permalink (post) to shorter version (e.g. /aaa/bbb/ccc/cat-post/ -> /ccc/cat-post/) */
 	/* TODO: Test redirect of full hierarchical category permalink (category) to shorter version (e.g. /category/aaa/bbb/ccc/ -> /category/ccc/) */
 	/* TODO: Test appropriate post(s) returned when querying shorter category permalink (e.g. /category/ccc/) */

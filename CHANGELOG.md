@@ -13,7 +13,7 @@
     * Change: Move `tests/` to `phpunit/tests/`
     * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
 * Unit tests:
-    * New: Add tests for `category_link()`
+    * New: Add tests for `category_link()`, `post_link()`
     * New: Add `unset_permalink_structures()` to unset configured permalink structures
 
 ## 2.4.2 _(2020-06-01)_
