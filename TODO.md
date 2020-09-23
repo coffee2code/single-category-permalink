@@ -11,6 +11,8 @@ The following list comprises ideas, suggestions, and known issues, all of which 
   See: https://wordpress.org/support/topic/woocommerce-463/
 * Support WooCommerce's `%product_cat%` permalink placeholder
   See: https://wordpress.org/support/topic/woocommerce-463/
+* Support hierarchical taxonomies, in general, by default? Or at least facilitate per-hierarchical taxonomy support.
 * Remove deprecated functions `c2c_single_category_postlink()`, `c2c_single_category_catlink()`, and `c2c_single_category_redirect()`
+* Add unit tests for `template_redirect()`
 
 Feel free to make your own suggestions or champion for something already on the list (via the [plugin's support forum on WordPress.org](https://wordpress.org/support/plugin/single-category-permalinks/) or on [GitHub](https://github.com/coffee2code/single-category-permalinks/) as an issue or PR).
