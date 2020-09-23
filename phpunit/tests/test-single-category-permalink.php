@@ -58,7 +58,7 @@ class Single_Category_Permalink_Test extends WP_UnitTestCase {
 	}
 
 	public function test_get_version() {
-		$this->assertEquals( '2.4.2', c2c_SingleCategoryPermalink::version() );
+		$this->assertEquals( '2.5', c2c_SingleCategoryPermalink::version() );
 	}
 
 	public function test_hooks_plugins_loaded() {

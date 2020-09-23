@@ -1,6 +1,6 @@
 # Changelog
 
-## _(in-progress)_
+## 2.5 _(2020-09-23)_
 * Fix: Default the `$taxonomy` argument of `category_link()` to 'category' to avoid a PHP warning/error
 * Fix: Handle the possibility that `get_category()` could return `null` for an invalid category ID
 * New: Add a TODO item about removing deprecated functions (which is not something I want to do just yet, hence the TODO)

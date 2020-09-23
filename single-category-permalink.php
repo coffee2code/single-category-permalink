@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Single Category Permalink
- * Version:     2.4.2
+ * Version:     2.5
  * Plugin URI:  https://coffee2code.com/wp-plugins/single-category-permalink/
  * Author:      Scott Reilly
  * Author URI:  https://coffee2code.com/
@@ -18,7 +18,7 @@
  *
  * @package Single_Category_Permalink
  * @author  Scott Reilly
- * @version 2.4.2
+ * @version 2.5
  */
 
 /*
@@ -51,7 +51,7 @@ class c2c_SingleCategoryPermalink {
 	 * @since 2.2
 	 */
 	public static function version() {
-		return '2.4.2';
+		return '2.5';
 	}
 
 	/**

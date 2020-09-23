@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.5
-Stable tag: 2.4.2
+Stable tag: 2.5
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -103,6 +103,22 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
+= 2.5 (2020-09-23) =
+* Fix: Default the `$taxonomy` argument of `category_link()` to 'category' to avoid a PHP warning/error
+* Fix: Handle the possibility that `get_category()` could return `null` for an invalid category ID
+* New: Add a TODO item about removing deprecated functions (which is not something I want to do just yet, hence the TODO)
+* Change: Update docs for return value of `category_link()` to reflect that `WP_Error` or `null` are also possible values
+* Change: Note compatibility through WP 5.5+
+* Change: Restructure unit test file structure
+    * New: Create new subdirectory `phpunit/` to house all files related to unit testing
+    * Change: Move `bin/` to `phpunit/bin/`
+    * Change: Move `tests/bootstrap.php` to `phpunit/`
+    * Change: Move `tests/` to `phpunit/tests/`
+    * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
+* Unit tests:
+    * New: Add tests for `category_link()`, `post_link()`
+    * New: Add `unset_permalink_structures()` to unset configured permalink structures
+
 = 2.4.2 (2020-06-01) =
 * Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests (and remove commented-out code)
 * Change: Note compatibility through WP 5.4+
@@ -113,21 +129,13 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 = 2.4.1 (2020-01-18) =
 * Fix: Prevent interfering with permalinks for non-category taxonomies. Props mynameisrabby.
 
-= 2.4 (2020-01-17) =
-* Change: Use `term_link` filter instead of the deprecated `category_link` filter. Props webgmclassics.
-* New: Add TODO.md and move existing TODO list from top of main plugin file into it (and add more items to the list)
-* Unit tests:
-    * Change: Update unit test install script and bootstrap to use latest WP unit test repo
-    * New: Add test for default hooks
-    * Fix: Rename and fix miscoded test for plugin initialization
-* Change: Note compatibility through WP 5.3+
-* Change: Update copyright date (2020)
-* Fix: Correct typo in GitHub URL
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/single-category-permalink/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.5 =
+Minor update: Minor compatibility updates, restructured unit test file structure, expanded unit test coverage, and noted compatibility through WP 5.5+.
 
 = 2.4.2 =
 Trivial update: Updated a few URLs to be HTTPS and noted compatibility through WP 5.4+
