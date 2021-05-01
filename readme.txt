@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.7
-Stable tag: 2.5
+Stable tag: 2.5.1
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -103,6 +103,10 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
+= 2.5.1 (2021-04-30) =
+* Change: Note compatibility through WP 5.7+
+* Change: Update copyright date (2021)
+
 = 2.5 (2020-09-23) =
 * Fix: Default the `$taxonomy` argument of `category_link()` to 'category' to avoid a PHP warning/error
 * Fix: Handle the possibility that `get_category()` could return `null` for an invalid category ID
@@ -126,13 +130,13 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 * Change: Update URLs used in examples to be HTTPS
 * Change: Unit tests: Remove unnecessary unregistering of hooks
 
-= 2.4.1 (2020-01-18) =
-* Fix: Prevent interfering with permalinks for non-category taxonomies. Props mynameisrabby.
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/single-category-permalink/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.5.1 =
+Trivial update: noted compatibility through WP 5.7+ and updated copyright date (2021).
 
 = 2.5 =
 Minor update: Minor compatibility updates, restructured unit test file structure, expanded unit test coverage, and noted compatibility through WP 5.5+.
