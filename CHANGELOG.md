@@ -1,5 +1,8 @@
 # Changelog
 
+## _(in-progress)_
+* Change: Update copyright date (2021)
+
 ## 2.5 _(2020-09-23)_
 * Fix: Default the `$taxonomy` argument of `category_link()` to 'category' to avoid a PHP warning/error
 * Fix: Handle the possibility that `get_category()` could return `null` for an invalid category ID
