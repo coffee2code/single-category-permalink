@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.6
 Tested up to: 5.8
-Stable tag: 2.5.1
+Stable tag: 2.5.2
 
 Reduce permalinks (category or post) that include entire hierarchy of categories to just having the lowest level category.
 
@@ -103,6 +103,16 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
 
 == Changelog ==
 
+= 2.5.2 (2021-09-28) =
+* Change: Note compatibility through WP 5.8+
+* Unit tests:
+    * Change: Restructure unit test directories
+        * Change: Move `phpunit/bin/` into `tests/`
+        * Change: Move `phpunit/` into `tests/`
+    * Change: Remove 'test-' prefix from unit test file
+    * Change: In bootstrap, store path to plugin file constant
+    * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
+
 = 2.5.1 (2021-04-30) =
 * Change: Note compatibility through WP 5.7+
 * Change: Update copyright date (2021)
@@ -123,17 +133,13 @@ add_filter( 'c2c_single_category_redirect_status', 'scp_change_redirect_status' 
     * New: Add tests for `category_link()`, `post_link()`
     * New: Add `unset_permalink_structures()` to unset configured permalink structures
 
-= 2.4.2 (2020-06-01) =
-* Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests (and remove commented-out code)
-* Change: Note compatibility through WP 5.4+
-* Change: Update links to coffee2code.com to be HTTPS
-* Change: Update URLs used in examples to be HTTPS
-* Change: Unit tests: Remove unnecessary unregistering of hooks
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/single-category-permalink/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.5.2 =
+Trivial update: noted compatibility through WP 5.8+ and minor reorganization and tweaks to unit tests
 
 = 2.5.1 =
 Trivial update: noted compatibility through WP 5.7+ and updated copyright date (2021).

@@ -1,6 +1,6 @@
 # Changelog
 
-## _(in-progress)_
+## 2.5.2 _(2021-09-28)_
 * Change: Note compatibility through WP 5.8+
 * Unit tests:
     * Change: Restructure unit test directories
